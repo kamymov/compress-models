@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 public class RleModel {
 
-    public String compress(String value) {
+    public static String compress(String value) {
         ArrayList<RleDto> arrayValues = RleModelCompressUtils.convertToRleDto(value);
         return RleModelCompressUtils.convertToString(arrayValues);
     }
 
-    public String deCompress(String compressed) {
+    public static String deCompress(String compressed) {
         ArrayList<RleDto> rleDtos = RleDeCompressUtils.convertToRleList(compressed);
         return RleDeCompressUtils.convertToString(rleDtos);
     }
