@@ -1,3 +1,8 @@
+import RleModels.RleModel;
+
 void main() {
-    System.out.println("Hello World");
+
+    RleModel rleModel = new RleModel();
+
+    System.out.println(rleModel.compress("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
 }
