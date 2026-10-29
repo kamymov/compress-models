@@ -9,16 +9,15 @@ public class RleModelCompressUtils {
     public static ArrayList<RleDto> convertToRleDto(String value) {
         char[] characters = value.toCharArray();
         ArrayList<RleDto> rleDtos = new ArrayList<RleDto>();
-        for (int i = 0; i < characters.length; i++) {
-            char base64Char = characters[i];
-            if (!rleDtos.isEmpty() && rleDtos.getLast().getKey().equals(String.valueOf(base64Char))) {
+        for (char chars : characters) {
+            if (!rleDtos.isEmpty() && rleDtos.getLast().getKey().equals(String.valueOf(chars))) {
                 RleDto lastDto = rleDtos.getLast();
                 int index = rleDtos.indexOf(lastDto);
                 lastDto.increaseValue();
                 rleDtos.set(index, lastDto);
             } else {
                 RleDto newRleDto = new RleDto();
-                newRleDto.setKey(String.valueOf(base64Char));
+                newRleDto.setKey(String.valueOf(chars));
                 newRleDto.setValue(1);
                 rleDtos.add(newRleDto);
             }
