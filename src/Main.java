@@ -4,5 +4,7 @@ void main() {
 
     RleModel rleModel = new RleModel();
 
-    System.out.println(rleModel.compress("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+    String compressedValue = rleModel.compress("AAAAAAAAAAABBBBBB");
+    System.out.println("Compressed Value: " + compressedValue);
+    System.out.println(rleModel.deCompress(compressedValue));
 }
